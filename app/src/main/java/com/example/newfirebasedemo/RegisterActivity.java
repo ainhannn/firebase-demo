@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
@@ -34,10 +36,10 @@ public class RegisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        email = findViewById(R.id.email);
+        email = findViewById(R.id.userName);
         password = findViewById(R.id.password);
-        register = findViewById(R.id.btn_register);
-        login = findViewById(R.id.login);
+        register = findViewById(R.id.registerBtn);
+        login = findViewById(R.id.goToLogin);
         auth = FirebaseAuth.getInstance();
 
         register.setOnClickListener(new View.OnClickListener() {

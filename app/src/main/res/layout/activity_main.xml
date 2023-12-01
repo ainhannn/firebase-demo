@@ -1,17 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="10dp">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2254A1">
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Multi Notes"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="0dp"
+            android:background="#2254A1"
+            android:clickable="true"
+            android:text="Add note"
+            android:textColor="@color/white"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="0dp"
+            android:background="#2254A1"
+            android:clickable="true"
+            android:text="Save"
+            android:textColor="@color/white"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#603682D3"
+        android:padding="10dp"
+        android:layout_below="@id/header"
+        android:layout_above="@id/logout">
+
+
+        <ListView
+            android:id="@+id/noteList"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/titleTxt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:hint="Title"
+                android:padding="10dp"/>
+
+            <EditText
+                android:id="@+id/contentTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/titleTxt"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:hint="Content"
+                android:gravity="start"
+                android:padding="10dp"/>
+
+        </RelativeLayout>
+    </ViewFlipper>
 
     <Button
         android:id="@+id/logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:text="Logout"/>
+        android:layout_alignParentEnd="true"
+        android:background="#2254A1"
+        android:text="Logout"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

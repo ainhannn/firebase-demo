@@ -32,10 +32,10 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        email = findViewById(R.id.email);
+        email = findViewById(R.id.userName);
         password = findViewById(R.id.password);
-        login = findViewById(R.id.btn_login);
-        register = findViewById(R.id.register);
+        login = findViewById(R.id.loginBtn);
+        register = findViewById(R.id.goToRegister);
         auth = FirebaseAuth.getInstance();
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +67,6 @@ public class LoginActivity extends Activity {
                                 }
                             }
                         });
-
             }
         });
 
