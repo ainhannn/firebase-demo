@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                currentNote = new Note(String.valueOf(notes.size()+1), new Date(), "New note",null,null);
+                currentNote = new Note(myRef.push().getKey(), new Date(), "New note",null,null);
                 myRef.child(currentNote.getId()).setValue(currentNote);
                 title.setText(currentNote.getTitle());
                 content.setText(currentNote.getContent());
